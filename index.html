@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <style>
+    /* bộ chọn con cháu p hoặc child */
+    /* .parent p{
+      color:red;
+  
+    }
+    .parent .child{
+      color: blue;
+    }
+    .parent div .chit{
+      color: green;
+    } */
+    /* bộ chọn con trực tiếp(con cấp 1) > */
+    /* .parent > p{
+      background: gray;
+    }
+    .parent > .child{
+      background: green;
+    }
+    .parent > div .chit{
+      background:yellow;
+    }
+    /* anh chi em kế cận */
+    /* div + p{
+      color:red;
+    }
+    .con1 + .con2{
+      background: green;
+    } */ 
+    /* anh chi em chung ~ */
+    /* div ~p{
+      background: green;
+    } */
+    .btn{
+      background:blue;
+      padding: 20px;
+      position: relative;
+    }
+    .btn:hover{
+      background: red;
+      color: green;
+      font-size:30px;
+
+     
+    }
+    .input:focus{
+      border:5px solid;
+      background: red;
+    }
+    .btn::first-letter{
+      font-size:30px;
+    }
+    /* ::after : chèn sau ,:: before:chèn trước */
+    .btn:hover::after{
+      width:100%;
+    }
+    .btn::after{
+      content:"";
+      color:white;
+      position:absolute;
+      background: green;
+      left:0;
+      bottom:0;
+      width:0px;
+      height:2px;
+      transition:all 2s ease;
+    }
+    .btn::before{
+      content: "chen truoc";
+      color:green;
+      
+    }
+    /* • transition-delay; thời gian delay
+• transition-duration: thời gian chuyển đổi vis dụ opacity 0->1 mất 1s 
+• transition-property: tên thuộc tinhs: all tất cả , color
+• transition-timing-function: ease: khởi dầu chậm kết thúc chậm, ease-in: vào chậm ra nhanh,  */
+    .btn{
+      opacity:0.4;
+      opacity:1;
+      /* transition-delay:0;
+      transition-duration:3s;
+      transition-property:background;
+      transition-timing-function:ease; */
+      /* transition: property duration ;timing-func delay; */
+
+    }
+    /* transition-delay: thời gian delay; 
+    transition-duration: thời gian chuyển đổi, đơn vị ms*/
+.box{
+  width:50px;
+  height:50px;
+  position:relative;
+  background: red;
+  /* animation-name: changePosition;
+  animation-duration:4s;
+  animation-delay:0;
+  animation-iteration-count:1;//infinition: lặp vô hạn
+  animation-direction: nomal;
+  animation-timing-function: ease;
+  animation-fill-mode:forwards; */
+  /* backwards */
+animation: changePosition1 5s ease 0s infinite normal forwards;
+}
+@keyframes changePosition{
+  from{
+    left:0;
+  }
+  to{
+    left:300px;
+  }
+}
+@keyframes changePosition1{
+  0%{
+    left:0;
+  }
+  50%{
+    background: blue;
+  }
+  to{
+    left:300px;
+    background: yellow;
+  }
+}
+/* • @keyframes : khởi tạo tên hiệu ứng và cách thay đổi giá trị thược tính
+      • animation-name: tên hiệu ứng
+• animation-duration: thơig gian
+• animation-delay: delay
+• animation-iteration-count: số lần chạy
+• animation-direction: cách chạy
+• animation-timing-function: function chạy như transition
+• animation-fill-mode: trang thái khi chạy xong: giữ nguyên thược tính hoặc là như cũ
+• animation:name duration timming delay interactionc-count direction */
+    </style>
+  </head>
+  <body>
+    <h1>Home page</h1>
+    <div class="box"></div>
+    <button class="btn">Button</button>
+    <input class="input">
+    <!-- <div>
+    <p>the 1</p>
+    </div>
+    <p>the 2</p>
+    <p>the 3</p>
+    <div>
+    <p>the 4</p>
+  </div>
+  <p>the 5</p> -->
+    <!-- <div class="parent">
+      <p>Child1</p>
+      <p class="child">Child2</p>
+      <p>Child3</p>
+      <p class="child">Child4</p>
+      <p>Child5</p>
+        <div>
+          <p>Child6</p>
+          <p class="child">Child7</p>
+          <p>Child8</p>
+             <div>
+             <p class="chit">Chit</p>
+            </div>
+        </div>
+    </div>
+    <p class="child">not child</p> -->
+    <!-- anh -->
+    <!-- <div>
+    <p>The 1</p>
+    <p>The 2</p>
+    </div> -->
+    <!-- anh 2 -->
+    <!-- <p>the 3</p>
+    <p>the 4</p>
+    <div class="con1">
+      <p>the 5</p>
+    </div>
+    <p class="con2">the 6</p> -->
+
+  </body>
+</html>
